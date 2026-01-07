@@ -10,6 +10,8 @@ This script parses the directory structure and extracts:
 - **Plate barcode** - from the folder name (e.g., `30082` from `30082__2025-05-31T01_01_45-Measurement 1`)
 - **Measurement signature** - the UUID from image URLs within the indexfile (e.g., `a1b2c3d4-e5f6-7890-abcd-ef1234567890`)
 
+The measurement signature is the unique identifier that Harmony assigns to each imaging run. When you acquire images on the Opera Phenix (or other Harmony-controlled instruments), it generates this UUID to identify that specific acquisition session. In the indexfile.txt, image URLs contain this UUID in their path (e.g., `//server/Images/a1b2c3d4-e5f6-7890-abcd-ef1234567890/r01c01f01p01-ch1sk1fk1fl1.tiff`), linking all images from a single plate measurement together.
+
 The output CSV maps plate barcodes to their measurement signatures, which is useful for:
 - Linking plate metadata to image analysis pipelines
 - Batch processing of multi-plate screening experiments
